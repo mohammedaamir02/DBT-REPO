@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scholify — "Check it. Track it. Get it."</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">Sc</div>
+      <div class="brand-text">
+        <div class="brand-title">Scholify</div>
+        <div class="brand-tag">"Check it. Track it. Get it."</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="btn btn-ghost" id="aboutBtn">About</button>
+      <button class="btn btn-outline" id="signInBtn">Sign In</button>
+      <button class="btn btn-primary" id="signUpBtn">Sign Up</button>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title">Simplifying scholarships for every student.</h1>
+      <p class="hero-sub">Don’t let payment confusion stop your scholarship. Know if your account is DBT-enabled and take quick action.</p>
+
+      <div class="hero-ctas">
+        <a href="#check" class="btn btn-cta">Check My DBT Status</a>
+        <a href="#guide" class="btn btn-ghost">Learn How</a>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <strong>✓</strong>
+          <div>
+            <div class="f-title">Easy check</div>
+            <div class="f-sub">Step-by-step guidance — 2 minutes.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <strong>✓</strong>
+          <div>
+            <div class="f-title">Privacy-first</div>
+            <div class="f-sub">No Aadhaar numbers stored.</div>
+          </div>
+        </div>
+        <div class="feature">
+          <strong>✓</strong>
+          <div>
+            <div class="f-title">Support</div>
+            <div class="f-sub">Contact helpdesk & template messages.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right" id="check" aria-labelledby="quick-check">
+      <h3 id="quick-check">Quick DBT Check</h3>
+      <p class="muted">Start a guided check to confirm if your bank account can receive scholarship DBT transfers.</p>
+
+      <div class="card-actions">
+        <button class="btn btn-primary full" id="startGuide">Start Guide</button>
+        <button class="btn btn-outline full" id="uploadBtn">Upload Bank Screenshot</button>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div class="step-no">1</div><div><strong>Check</strong><div class="muted">Follow the guided steps</div></div></div>
+        <div class="step"><div class="step-no">2</div><div><strong>Track</strong><div class="muted">See next actions if not DBT-enabled</div></div></div>
+        <div class="step"><div class="step-no">3</div><div><strong>Get it</strong><div class="muted">Fix and receive funds</div></div></div>
+      </div>
+    </aside>
+  </main>
+
+  <section class="guide" id="guide">
+    <div class="container">
+      <h2>How Scholify helps</h2>
+      <p class="muted">Scholify explains the difference between Aadhaar-linked and DBT-enabled accounts, shows simple checks, and connects you to help.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h4>Aadhaar-linked</h4>
+          <p class="muted">Aadhaar is attached to the account — but not always DBT-enabled for government transfers.</p>
+        </div>
+        <div class="card">
+          <h4>DBT-enabled (Aadhaar-seeded)</h4>
+          <p class="muted">Properly seeded account that can receive Direct Benefit Transfers (scholarship money).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Scholify</h2>
+      <p class="muted">Scholify is a student-friendly tool to reduce scholarship payment failures by educating students and guiding them to verify DBT status.</p>
+      <ul class="muted">
+        <li>Clear comparison cards</li>
+        <li>Step-by-step checker with screenshots</li>
+        <li>Contact templates & support ticket</li>
+        <li>Multilingual content & analytics for colleges</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div>© Scholify • Helping students receive scholarships</div>
+    <div class="muted">Privacy-first • No Aadhaar stored</div>
+  </footer>
+
+  <script>
+    // Basic button actions (demo placeholders)
+    document.getElementById('signUpBtn').addEventListener('click', ()=> {
+      alert('Sign Up clicked — open sign-up modal or redirect to sign-up page (demo).');
+    });
+    document.getElementById('signInBtn').addEventListener('click', ()=> {
+      alert('Sign In clicked — open sign-in modal or redirect to sign-in page (demo).');
+    });
+    document.getElementById('aboutBtn').addEventListener('click', ()=> {
+      document.getElementById('about').scrollIntoView({behavior:'smooth'});
+    });
+    document.getElementById('startGuide').addEventListener('click', ()=> {
+      alert('Starting guided DBT check (demo).');
+    });
+    document.getElementById('uploadBtn').addEventListener('click', ()=> {
+      alert('Upload screenshot — demo placeholder.');
+    });
+  </script>
+</body>
+</html>
