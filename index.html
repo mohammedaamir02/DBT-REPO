@@ -12,30 +12,81 @@
   <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="brand">
-      <div class="logo">Sc</div>
+      <div class="logo" aria-hidden="true">Sc</div>
       <div class="brand-text">
         <div class="brand-title">Scholify</div>
         <div class="brand-tag">"Check it. Track it. Get it."</div>
       </div>
     </div>
 
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
       <button class="btn btn-ghost" id="aboutBtn">About</button>
       <button class="btn btn-outline" id="signInBtn">Sign In</button>
       <button class="btn btn-primary" id="signUpBtn">Sign Up</button>
     </nav>
   </header>
 
-  <main class="hero">
+  <main class="hero" role="main">
     <div class="hero-left">
       <h1 class="hero-title">Simplifying scholarships for every student.</h1>
       <p class="hero-sub">Don’t let payment confusion stop your scholarship. Know if your account is DBT-enabled and take quick action.</p>
 
+      <!-- Primary CTAs remain but replaced with the five feature buttons below -->
       <div class="hero-ctas">
-        <a href="#check" class="btn btn-cta">Check My DBT Status</a>
-        <a href="#guide" class="btn btn-ghost">Learn How</a>
+        <a href="#checker" class="btn btn-cta" id="quickCheck">Check My DBT Status</a>
+        <a href="#guide" class="btn btn-ghost" id="quickGuide">Learn How</a>
+      </div>
+
+      <!-- Top 5 features quick buttons (primary ask) -->
+      <div class="features-quick" aria-label="Top features">
+        <button class="btn-feature" data-href="checker.html" aria-label="DBT Status Checker">
+          <div class="f-title">DBT Status Checker</div>
+          <div class="f-sub">Instantly check if your account is DBT-enabled</div>
+        </button>
+
+        <button class="btn-feature" data-href="fix.html" aria-label="Step-by-step Fix Guide">
+          <div class="f-title">Step-by-Step Fix Guide</div>
+          <div class="f-sub">3 simple actions to activate DBT</div>
+        </button>
+
+        <button class="btn-feature" data-href="explainer.html" aria-label="Visual Awareness Explainer">
+          <div class="f-title">Visual Explainer</div>
+          <div class="f-sub">Short multilingual video & infographic</div>
+        </button>
+
+        <button class="btn-feature" data-href="chat.html" aria-label="Chatbot & Helpdesk">
+          <div class="f-title">Chatbot & Helpdesk</div>
+          <div class="f-sub">Ask FAQs, upload screenshots, raise tickets</div>
+        </button>
+
+        <button class="btn-feature" data-href="settings.html" aria-label="Multilingual & Mobile UI">
+          <div class="f-title">Multilingual UI</div>
+          <div class="f-sub">English + regional languages, mobile-ready</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- right side graphic (keeps page balance) -->
+    <div class="hero-right" aria-hidden="true">
+      <!-- simple illustrative card / placeholder -->
+      <div class="feature-card-hero">
+        <svg width="220" height="220" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#4ade80"/>
+              <stop offset="1" stop-color="#38bdf8"/>
+            </linearGradient>
+          </defs>
+          <rect x="6" y="6" width="108" height="108" rx="14" fill="url(#g)" opacity="0.12"/>
+          <g transform="translate(16,22)">
+            <rect width="88" height="14" rx="3" fill="#fff" opacity="0.06"/>
+            <rect y="24" width="60" height="10" rx="3" fill="#fff" opacity="0.04"/>
+            <rect y="42" width="76" height="10" rx="3" fill="#fff" opacity="0.04"/>
+            <circle cx="74" cy="48" r="6" fill="#fff" opacity="0.08"/>
+          </g>
+        </svg>
       </div>
     </div>
   </main>
@@ -53,21 +104,41 @@
     </div>
   </section>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div>© Scholify • Helping students receive scholarships</div>
     <div class="muted">Privacy-first • No Aadhaar stored</div>
   </footer>
 
   <script>
-    // Button actions
+    // Existing button actions
     document.getElementById('signUpBtn').addEventListener('click', ()=> {
-      window.location.href = 'signup.html'; // link to signup page
+      window.location.href = 'signup.html';
     });
     document.getElementById('signInBtn').addEventListener('click', ()=> {
-      window.location.href = 'signin.html'; // link to signin page
+      window.location.href = 'signin.html';
     });
     document.getElementById('aboutBtn').addEventListener('click', ()=> {
       document.getElementById('about').scrollIntoView({behavior:'smooth'});
+    });
+
+    // Feature quick buttons navigation (placeholder links)
+    document.querySelectorAll('.btn-feature').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const href = btn.getAttribute('data-href') || '#';
+        // If target page exists later, we'll navigate. For now, attempt navigation.
+        window.location.href = href;
+      });
+    });
+
+    // Keep original quick CTAs functional (anchors for now)
+    document.getElementById('quickCheck').addEventListener('click', (e) => {
+      e.preventDefault();
+      // go to checker page if exists
+      window.location.href = 'checker.html';
+    });
+    document.getElementById('quickGuide').addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'fix.html';
     });
   </script>
 </body>

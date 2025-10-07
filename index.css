@@ -86,7 +86,8 @@ body{
   margin:8px auto 28px auto;
   padding:28px;
 }
-.hero-left{padding:6px}
+.hero-left{padding:6px;flex:1}
+.hero-right{flex:0 0 260px;display:flex;align-items:center;justify-content:center}
 .hero-title{
   font-size:34px;
   margin:0 0 12px 0;
@@ -103,6 +104,44 @@ body{
 .hero-ctas{display:flex;gap:12px;margin-bottom:18px}
 .btn-cta{background:linear-gradient(90deg,var(--accent-2), var(--accent-3));color:#fff;padding:14px 20px;border-radius:12px;box-shadow:0 18px 40px rgba(124,58,237,0.08)}
 .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--muted)}
+
+/* FEATURES QUICK (grid of 5 big buttons) */
+.features-quick{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+.btn-feature{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  padding:14px;
+  border-radius:12px;
+  text-align:left;
+  cursor:pointer;
+  transition:transform .16s ease, box-shadow .16s ease;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.btn-feature:hover{
+  transform:translateY(-6px);
+  box-shadow: 0 18px 40px rgba(56,189,248,0.06);
+}
+.f-title{font-weight:800;font-size:15px;color:#fff}
+.f-sub{font-size:13px;color:var(--muted)}
+
+/* feature-card-hero placeholder */
+.feature-card-hero{
+  width:220px;
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  box-shadow: 0 20px 50px rgba(7,16,24,0.35);
+}
 
 /* about */
 .about{padding:26px 0;background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
@@ -123,4 +162,18 @@ body{
   .hero{padding:18px;flex-direction:column;align-items:flex-start}
   .hero-title{font-size:24px}
   .nav{gap:8px}
+
+  .features-quick{
+    grid-template-columns:repeat(1,1fr);
+    gap:10px;
+    width:100%;
+  }
+  .hero-right{width:100%;margin-top:16px}
+}
+
+/* small accessibility improvements */
+.btn-feature:focus,
+.btn:focus{
+  outline:3px solid rgba(56,189,248,0.14);
+  outline-offset:3px;
 }
